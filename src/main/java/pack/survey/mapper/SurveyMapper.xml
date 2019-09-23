@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="pack.survey.mapper.SurveyMapper">
+
+	<select id="surveyCount" resultType="int">
+		select
+		count(*)
+		from survey
+	</select>
+
+	<insert id="surveyInsert"
+		parameterType="pack.survey.domain.SurveyVO">
+		insert into
+		survey (sno, gender, content1, q1)
+		values(#{sno}, #{gender}, #{content1}, #{q1})
+	</insert>
+
+	<select id="MTiger" resultType="int">
+		SELECT count(*) FROM test.survey where gender='m' and content1='1' and
+		q1='1';
+	</select>
+
+	<select id="WTiger" resultType="int">
+		SELECT count(*) FROM test.survey where gender='w' and content1='1' and
+		q1='1';
+	</select>
+
+	<select id="MEagle" resultType="int">
+		SELECT count(*) FROM test.survey where gender='m' and content1='1' and
+		q1='2';
+	</select>
+
+	<select id="WEagle" resultType="int">
+		SELECT count(*) FROM test.survey where gender='w' and content1='1' and
+		q1='2';
+	</select>
+
+
+	<select id="MApple" resultType="int">
+		SELECT count(*) FROM test.survey where gender='m' and content1='2' and
+		q1='1';
+	</select>
+
+	<select id="WApple" resultType="int">
+		SELECT count(*) FROM test.survey where gender='w' and content1='2' and
+		q1='1';
+	</select>
+
+	<select id="MStraw" resultType="int">
+		SELECT count(*) FROM test.survey where gender='m' and content1='2' and
+		q1='2';
+	</select>
+
+	<select id="WStraw" resultType="int">
+		SELECT count(*) FROM test.survey where gender='w' and content1='2' and
+		q1='2';
+	</select>
+	
+</mapper>
